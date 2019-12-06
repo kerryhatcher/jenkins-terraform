@@ -4,6 +4,5 @@ terraform {
 
 module "jenkins_master" {
   source = "../module"
+  region = ""
 }
-
-
