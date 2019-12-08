@@ -71,6 +71,7 @@ resource "aws_launch_template" "jenkins_master" {
       name = "${aws_iam_instance_profile.jenkins_master_profile.name}"
     }
   image_id = data.aws_ssm_parameter.ecs_ami.value
+  vpc_security_group_ids = [aws_security_group.allow_tls.id]
 }
 
 resource "aws_security_group" "allow_tls" {
